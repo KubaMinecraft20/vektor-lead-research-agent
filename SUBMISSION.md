@@ -58,7 +58,7 @@ Node.js built-ins, TypeScript, HTML, CSS, and browser JavaScript. No third-party
 ## Submission checklist
 
 - [x] Create a public GitHub repository and include its URL above.
-- [ ] Push the complete project folder; check that README and tests are visible publicly.
+- [x] Push the complete project folder; README and tests are visible in the public repository.
 - [ ] Run `npm start` from a clean checkout on Node.js 22.6+ and test both fictional demos.
 - [ ] Test one public site and one unavailable site with pasted public text; verify the source citations and error fallback.
 - [ ] Record the 2:35 walkthrough, including the brief copy action and a short code view.
