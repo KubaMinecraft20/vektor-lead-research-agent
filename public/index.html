@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6f2">
+    <meta name="description" content="Důkazy z veřejného webu. Opatrné hypotézy. Návrh malého pilotu.">
+    <title>Vektor — Lead Research Agent</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Vektor Lead Research Agent — úvodní stránka">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-copy"><strong>vektor<span>.</span></strong><small>LEAD RESEARCH AGENT</small></span>
+      </a>
+      <div class="topbar-note"><span class="live-dot"></span><span id="provider-status">Lokální režim · bez LLM klíče</span></div>
+    </header>
+
+    <main class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="eyebrow"><span>01</span> PUBLIC WEB RESEARCH</div>
+        <h1 id="page-title">Z veřejného webu<br><em>k užitečnému pilotu.</em></h1>
+        <p>Najdi doložené signály, odděl hypotézy od faktů a připrav malý návrh k lidské revizi.</p>
+        <div class="trust-line"><span>◇</span> Citace u každého signálu <b>·</b> Bez automatického kontaktování</div>
+      </section>
+
+      <div class="workspace-grid">
+        <aside class="input-column" aria-label="Vstupní údaje">
+          <section class="panel input-panel">
+            <div class="panel-heading">
+              <div><div class="eyebrow"><span>01</span> VSTUP</div><h2>Prověřit firmu</h2></div>
+              <span class="step-number">01 / 03</span>
+            </div>
+            <form id="research-form">
+              <label for="company-name">Název firmy</label>
+              <input id="company-name" name="companyName" type="text" maxlength="140" placeholder="Např. Dílna Sever" required autocomplete="organization">
+
+              <label for="company-url">Veřejný web</label>
+              <div class="url-input"><span aria-hidden="true">↗</span><input id="company-url" name="website" type="url" placeholder="https://firma.cz" required inputmode="url" autocomplete="url"></div>
+              <p class="field-hint">Načtou se nejvýše 3 veřejné stránky stejného webu.</p>
+
+              <label for="pasted-text">Veřejný text <span class="optional">VOLITELNÉ</span></label>
+              <textarea id="pasted-text" name="pastedText" rows="4" maxlength="12000" placeholder="Když web nejde načíst, vložte veřejný popis firmy, produktů nebo procesu."></textarea>
+              <p class="field-hint">Vkládejte jen text určený veřejnosti. Obsah se po analýze neukládá.</p>
+
+              <div id="form-error" class="error-box" role="alert" hidden></div>
+              <button class="button button-primary" type="submit"><span>Analyzovat web</span><span aria-hidden="true">→</span></button>
+            </form>
+          </section>
+
+          <section class="panel demo-panel" aria-labelledby="demo-title">
+            <div class="demo-heading"><span class="demo-icon" aria-hidden="true">✳</span><div><div class="eyebrow">VŽDY FUNKČNÍ UKÁZKA</div><h2 id="demo-title">Vyzkoušet demo data</h2></div></div>
+            <p class="demo-intro">Dvě fiktivní firmy, uložené lokálně. Bez volání na jejich web.</p>
+            <div id="demo-list" class="demo-list" aria-live="polite"><div class="demo-loading"><span class="tiny-spinner"></span> Načítám ukázky…</div></div>
+          </section>
+
+          <div class="privacy-note"><span aria-hidden="true">⌑</span><p><strong>Soukromí a bezpečí</strong><br>Jen veřejné stránky nebo ručně vložený veřejný text. Bez databáze, přihlášení a zápisu do CRM.</p></div>
+        </aside>
+
+        <section class="results-column" aria-label="Výsledek analýzy" aria-live="polite">
+          <div id="empty-state" class="panel empty-state">
+            <div class="empty-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-center"><span>V</span><i>+</i></div><div class="art-node node-one">01</div><div class="art-node node-two">02</div><div class="art-node node-three">03</div></div>
+            <div class="eyebrow"><span>02</span> EVIDENCE-FIRST ANALYSIS</div>
+            <h2>Nejdřív důkaz.<br><em>Potom hypotéza.</em></h2>
+            <p>Výstup ukáže, co web skutečně říká, co je jen možná příležitost a co musí potvrdit člověk.</p>
+            <div class="empty-checks"><span><b>✓</b> Citace se zdroji</span><span><b>✓</b> Úroveň jistoty</span><span><b>✓</b> Český brief k revizi</span></div>
+            <div class="empty-footer"><span class="empty-line"></span><span>VÝSLEDEK SE UKÁŽE ZDE</span><span class="empty-line"></span></div>
+          </div>
+
+          <div id="loading-state" class="panel loading-state" hidden>
+            <div class="loader-orbit"><span></span><span></span><span></span></div>
+            <div class="eyebrow"><span>02</span> ANALÝZA PROBÍHÁ</div>
+            <h2>Čtu zdroje.<br><em>Neodhaduji naslepo.</em></h2>
+            <ol id="progress-steps" class="progress-steps">
+              <li data-step="0"><span class="progress-icon">01</span><span>Načítám dostupný text</span></li>
+              <li data-step="1"><span class="progress-icon">02</span><span>Vybírám citace a signály</span></li>
+              <li data-step="2"><span class="progress-icon">03</span><span>Odděluji fakta od hypotéz</span></li>
+              <li data-step="3"><span class="progress-icon">04</span><span>Formuluji pilot a brief</span></li>
+            </ol>
+            <p class="loading-caption">Při chybě načtení můžeš doplnit veřejný text z webu.</p>
+          </div>
+
+          <div id="results" class="results-stack" hidden></div>
+        </section>
+      </div>
+      <footer class="page-footer"><span>VEKTOR FLOW <b>·</b> HACKATHON MVP</span><span>Fakta jsou citována. Návrhy zůstávají hypotézami.</span></footer>
+    </main>
+  </body>
+</html>
