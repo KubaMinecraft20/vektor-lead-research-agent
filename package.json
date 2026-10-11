@@ -1,0 +1,12 @@
+{
+  "name": "vektor-lead-research-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Evidence-first public website research and Czech automation briefs.",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "start": "node --experimental-strip-types src/server.ts",
+    "test": "node --experimental-strip-types tests/analysis.test.mjs"
+  }
+}
